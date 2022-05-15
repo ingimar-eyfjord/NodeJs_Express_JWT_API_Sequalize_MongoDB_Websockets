@@ -1,0 +1,9 @@
+module.exports = (app, VerifyToken) => {
+    const preferences = require("./preferences.controller.js");
+    var router = require("express").Router();
+    // Create a new Tutorial
+    router.get("/cardElements/:params", VerifyToken, preferences.cardElements);
+    router.get("/CardElementsPreference/:params", VerifyToken, preferences.CardElementsPreference);
+    app.use("/api/Preferences", router);
+  };
+  
